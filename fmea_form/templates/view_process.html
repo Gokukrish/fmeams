@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="container contact">
+        <div class="text-right mb-2">
+            <a href="{% url 'fmeaprocess' %}"><button class="btn btn-warning col-md-1">Add New</button></a>
+        </div>
+      <div class="row">
+          <div class="col-md-12 col-lg-9">
+              <table class="table table-striped table-bordered text-center " style="background-color:azure;">
+                  <thead class="thead-dark">
+                    <tr>
+                       <th>Type</th>
+                       <th>Process Step/Input</th>
+                       <th>Potential Failure Mode</th>
+                       <th>Potential Failure Effects</th>
+                       <th>SEVERITY (1 - 10)</th>
+                       <th>Potential Causes</th>
+                       <th>OCCURRENCE (1 - 10)</th>
+                       <th>Current Controls</th>
+                       <th>DETECTION (1 - 10)</th>
+                       <th>RPN</th>
+                       <th>Action Recommended</th> 
+                       <th>Resp.</th>
+                       <th>Actions Taken</th>
+                      </tr>
+                      <tr>
+                          {% for data in dataset %}
+                          <tr>
+                              <td>{{data.processStep}}</td>
+                              <td>{{data.potentialFaliureMode}}</td>
+                              <td>{{data.potentialFailureEffect}}</td>
+                              <td>{{data.severity}}</td>
+                              <td>{{data.potentialCause}}</td>
+                              <td>{{data.occurence}}</td>
+                              <td>{{data.currentControls}}</td>
+                              <td>{{data.detection}}</td>
+                              <td>{{data.rpn}}</td>
+                              <td>{{data.actionRecommended}}</td>
+                              <td>{{data.responsiblePerson}}</td>
+                              <td>{{data.actionTaken}}</td>
+                          </tr>
+                          {% endfor %}
+                      </tr>
+
+                  </thead>
+                 
+                 
+
+              </table>
+           
+             
+          </div>
+      </div>
+  </div>
+  
+  
+{% endblock %}
