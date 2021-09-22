@@ -44,16 +44,14 @@ def fmeaProcessRegForm(request):
 def fmeaProcess(request):
     form=FmeaForm2()
     if request.method=="POST":
+        
         form=FmeaForm2(request.POST)
+        print(form)
         if form.is_valid():
+            form.rpn=form.severity*form.occurence*form.detection
             form.save()
             messages.success(request,"Fmea created Successfully")
-            return render(request,"view_process.html",)
-        # process=request.POST.get('process')
-        # preparedBy=request.POST.get('preparedBy')
-        # responsible=request.POST.get('responsible')
-        # date=request.POST.get('date')
-        # revisedDate=request.POST.get('revisedDate')
+            return redirect('fmeaprocess')
     context={'form':form}
     return render(request,"fmeaForm2.html",context)
     
