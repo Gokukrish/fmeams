@@ -26,6 +26,7 @@
                        <th>Action Recommended</th> 
                        <th>Resp.</th>
                        <th>Actions Taken</th>
+                       <th>Edit</th>
                       </tr>
                       <tr>
                           {% for data in dataset %}
@@ -43,6 +44,7 @@
                               <td>{{data.actionRecommended}}</td>
                               <td>{{data.responsiblePerson}}</td>
                               <td>{{data.actionTaken}}</td>
+                              <td><a href="/fmea/update/{{ data.id }}">Edit</a></td>
                           </tr>
                           {% endfor %}
                       </tr>

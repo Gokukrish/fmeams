@@ -2,11 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from fmea_form.models import FmeaRegister, FmeaProcess
 
-choices=(
-    ("10","More than once per day"),
-    ("9","Once every 3-4 days"),
-    ("8","Once Every week")
-)
+
 
 class DateInput(forms.DateInput):
     input_type = 'date'

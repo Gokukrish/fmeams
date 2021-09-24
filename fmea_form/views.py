@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
-from django.shortcuts import redirect
 from django.contrib import messages
 from fmea_form.models import FmeaRegister
 from fmea_form.models import FmeaProcess
@@ -44,14 +43,13 @@ def fmeaProcessRegForm(request):
 def fmeaProcess(request):
     form=FmeaForm2()
     if request.method=="POST":
-        
         form=FmeaForm2(request.POST)
-        print(form)
+        
         if form.is_valid():
-            form.rpn=form.severity*form.occurence*form.detection
+            
             form.save()
             messages.success(request,"Fmea created Successfully")
-            return redirect('fmeaprocess')
+            return redirect('view_fmea')
     context={'form':form}
     return render(request,"fmeaForm2.html",context)
     
@@ -60,3 +58,18 @@ def view_process(request):
     context={}
     context["dataset"]=FmeaProcess.objects.all()
     return render(request,"view_process.html",context)
+
+def edit_process(request, id):
+    fmea=FmeaProcess.objects.get(id=id)
+    return render(request,'edit.html',{'fmea':fmea})
+
+
+def update_process(request,id):
+    context ={}
+    obj = get_object_or_404(FmeaProcess, id = id)
+    form = FmeaForm2(request.POST or None, instance = obj)
+    if form.is_valid():
+        form.save()
+        return redirect('view_fmea')
+    context["form"] = form
+    return render(request, "update_view.html", context)
