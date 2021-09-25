@@ -1,11 +1,21 @@
-body{
-    background-color: #25274d;
+.bgcolor{
+    
+    background-color: #c8d8e4;
+    
+}
+.bg-side{
+    background-color: #2b6777;
+    
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color:white !important;
 }
 .contact{
     padding: 4%;
     height: 400px;
 }
-.col-md-3{
+.left-form{
     background: #ff9b00;
     padding: 4%;
     border-top-left-radius: 0.5rem;
@@ -20,7 +30,7 @@ body{
 .contact-info h2{
     margin-bottom: 10%;
 }
-.col-md-9{
+.right-form{
     background: #fff;
     padding: 3%;
     border-top-right-radius: 0.5rem;

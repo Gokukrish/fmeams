@@ -1,33 +1,32 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<br>
-<div class="container contact">
+<div class="container mt-2">
 
-<div class="row">
-<div class="col-md-3 col-lg-2">
-    <div class="contact-info">
-        
-        <h2>FMEA</h2>
-        
-    </div>
-</div>
-<div class="col-md-9 col-lg-6">
-    <div class="contact-form">
-        <form method="POST" action="">
-            {% csrf_token %} 
-            {{ form|crispy }}
-
-        <div class="form-group mt-2">        
-            <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
+    <div class="row">
+        <div class="col-md-4 col-lg-3 left-form">
+            <div class="contact-info">
+                
+                <h2>FMEA</h2>
+                
             </div>
         </div>
-    </form>
+        <div class="col-md-8 col-lg-9 right-form">
+            <div class="contact-form">
+                <form method="POST" action="">
+                    {% csrf_token %} 
+                    {{ form|crispy }}
+
+                <div class="form-group mt-2">        
+                    <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+            {{form.errors}}
+        </div>
     </div>
-    {{form.errors}}
-</div>
-</div>
 </div> 
 {% endblock %}        
 <!-- </body>

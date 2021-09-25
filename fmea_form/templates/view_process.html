@@ -3,13 +3,13 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <div class="container contact">
+  <div class="container-fluid contact">
         <div class="text-right mb-2">
             <a href="{% url 'fmeaprocess' %}"><button class="btn btn-warning col-md-1">Add New</button></a>
         </div>
-      <div class="row">
-          <div class="col-md-12 col-lg-9">
-              <table class="table table-striped table-bordered text-center " style="background-color:azure;">
+      <div class="card m-5 p-3" >
+          <div class="table-responsive">
+              <table class="table table-striped  text-center mt-3" id="table_id" >
                   <thead class="thead-dark">
                     <tr>
                        
@@ -28,7 +28,9 @@
                        <th>Actions Taken</th>
                        <th>Edit</th>
                       </tr>
-                      <tr>
+                    </thead>
+                    <tbody>
+                     
                           {% for data in dataset %}
                           <tr>
                               <td>{{data.processStep}}</td>
@@ -44,21 +46,14 @@
                               <td>{{data.actionRecommended}}</td>
                               <td>{{data.responsiblePerson}}</td>
                               <td>{{data.actionTaken}}</td>
-                              <td><a href="/fmea/update/{{ data.id }}">Edit</a></td>
+                              <td><a class="btn" style="background-color:#52ab98;" href="/fmea/update/{{ data.id }}">Edit</a></td>
+                            
                           </tr>
+
                           {% endfor %}
-                      </tr>
-
-                  </thead>
-                 
-                 
-
+                    </tbody>
               </table>
-           
-             
           </div>
       </div>
   </div>
-  
-  
 {% endblock %}

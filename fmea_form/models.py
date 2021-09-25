@@ -7,8 +7,10 @@ occurance_choices=(
     (7,"Once every month"),
     (6,"Once every 3 months"),
     (5,"Once every 6 months"),
-    (4,"Once a year"),
-   
+    (4,"Once every 9 months"),
+    (3,"Twice a year"),
+    (2,"Once a Year"),
+    (1,"Once every 1 - 3 years"), 
 )
 
 class FmeaRegister(models.Model):
