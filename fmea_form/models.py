@@ -13,6 +13,11 @@ occurance_choices=(
     (1,"Once every 1 - 3 years"), 
 )
 
+status=(
+    (1,"Completed"),
+    (0,"Incomplete")
+)
+
 class FmeaRegister(models.Model):
     process = models.CharField(max_length=200)
     preparedBy = models.CharField(max_length=200)
@@ -26,20 +31,25 @@ class FmeaRegister(models.Model):
 
 
 class FmeaProcess(models.Model):
+    processType=models.CharField(max_length=1024,null=True)
     fmeaRegister= models.ForeignKey(FmeaRegister, on_delete=models.CASCADE)
-    processStep= models.CharField(max_length=300)
-    processType=models.CharField(max_length=300,null=True)
-    potentialFaliureMode= models.CharField(max_length=300)
-    potentialFailureEffect= models.CharField(max_length=300)
+    processStep= models.CharField(max_length=1024)
+    potentialFaliureMode= models.CharField(max_length=1024)
+    potentialFailureEffect= models.CharField(max_length=1024)
     severity = models.IntegerField(default=0)
-    potentialCause= models.CharField(max_length=300)
+    potentialCause= models.CharField(max_length=1024)
     occurence = models.IntegerField(choices=occurance_choices,default=0)
-    currentControls= models.CharField(max_length=300)
+    currentControls= models.CharField(max_length=1024)
     detection = models.IntegerField(default=0)
     #rpn = models.IntegerField(default=0)
-    actionRecommended= models.CharField(max_length=300)
+    actionRecommended= models.CharField(max_length=1024)
     responsiblePerson= models.CharField(max_length=200)
-    actionTaken= models.CharField(max_length=300)
+    actionTaken= models.CharField(max_length=1024)
+    reference = models.CharField(max_length=1024,default=None)
+    status=models.BooleanField(choices=status,default=0)
+    finalSeverity=models.IntegerField(default=0)
+    finalOccurence=models.IntegerField(default=0)
+    finalDetection=models.IntegerField(default=0)
 
     def __str__(self):
         return self.processStep
@@ -47,4 +57,11 @@ class FmeaProcess(models.Model):
     @property
     def rpn(self):
         return self.severity*self.occurence*self.detection
+    
+    @property
+    def finalRPN(self):
+        return self.finalSeverity*self.finalOccurence*self.finalDetection
 
+    @property
+    def riskLevel(self):
+        return self.severity*self.detection

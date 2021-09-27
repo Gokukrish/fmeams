@@ -87,5 +87,30 @@ class FmeaForm2(forms.ModelForm):
             'actionTaken':TextInput(attrs={
                 'class': "form-control mb-2",
                 'placeholder': 'Action Taken'
-                }),   
+                }), 
+            'reference':TextInput(attrs={
+                'class': "form-control mb-2",
+                'placeholder': 'Reference'
+
+            }),
+             'status':forms.Select(attrs={
+                'class': "form-control mb-2",
+
+            }),
+            'finalSeverity':TextInput(attrs={
+                'class': "form-control mb-2",
+                'placeholder': 'Final Severity'
+
+            }),
+            'finalOccurence':TextInput(attrs={
+                'class': "form-control mb-2",
+                'placeholder': 'Final Occurence'
+
+            }),
+            'finalDetection':TextInput(attrs={
+                'class': "form-control mb-2",
+                'placeholder': 'Final Detection'
+
+            }),  
+
         }
