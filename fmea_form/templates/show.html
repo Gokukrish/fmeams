@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+{% load static %}
+{# load crispy_forms_tags #}
+{% block content %}
+  <div class="container bgcolor">
+   
+      <div class="card  m-5 p-3" >
+          
+          <div class="row mb-2">
+            <div class="col-md-3 col-lg-3">
+                Type
+            </div>
+            <div class="col-md-9 col-lg-9">
+                {{fmea.processType}}
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-md-3 col-lg-3">
+                Process Step/Input
+            </div>
+            <div class="col-md-9 col-lg-9">
+                {{fmea.processStep}}
+            </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}
+

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{# load crispy_forms_tags #}
+{% block content %}
+<div class="container">
+    <div class="row text-center mt-3 bg-primary">
+        <h3>Severity Scale</h3>
+    </div>
+    <div class="row text-center">
+        <h3>Adapt as appropriate</h3>
+    </div>
+    <table class='table table-striped table-bordered table-hover'>
+        <thead>
+            <th>
+                Effect
+            </th>
+            <th>Criteria: Severity of Effect</th>
+            <th>Ranking</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hazardous - 
+                    Without Warning</td>
+                <td>May expose client to loss, harm or major disruption - 
+                    failure will occur without warning</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Hazardous -
+                    With Warning</td>
+                <td>May expose client to loss, harm or major disruption - 
+                    failure will occur with warning</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Very High</td>
+                <td>Major disruption of service involving client interaction, resulting in either associate re-work or inconvenience to client</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>High</td>
+                <td>Minor disruption of service involving client interaction and resulting in either associate re-work or inconvenience to clients</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Moderate</td>
+                <td>Major disruption of service not involving client interaction and resulting in either associate re-work or inconvenience to clients</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Low</td>
+                <td>Minor disruption of service not involving client interaction and resulting in either associate re-work or inconvenience to clients</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Very Low</td>
+                <td>Minor disruption of service involving client interaction that does not result in either associate re-work or inconvenience to clients</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Minor</td>
+                <td>Minor disruption of service not involving client interaction and does not result in either associate re-work or inconvenience to clients</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Very Minor</td>
+                <td>No disruption of service noticed by the client in any capacity and does not result in either associate re-work or inconvenience to clients</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>None</td>
+                <td>No Effect</td>
+                <td>1</td>
+            </tr>
+          
+
+        </tbody>
+        
+    </table>
+</div>
+
+{% endblock %}

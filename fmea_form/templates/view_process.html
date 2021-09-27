@@ -4,10 +4,28 @@
 {# load crispy_forms_tags #}
 {% block content %}
   <div class="container-fluid bgcolor">
-      <div class="row ">
-        <div class="float-right">
-          <a href="{% url 'fmeaprocess' %}"><button class="btn btn-warning ">Add New</button></a>
-        </div>
+  <div class="container mt-3">
+    <div class="row ">
+      <div class="col-md-6">
+        Process/Product Name:<u>{{proc1.process}}</u>
+      </div>
+      <div class="col-md-6">
+        Prepared By: <u>{{proc1.preparedBy}}	</u>	
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-md-6">
+        Responsible: <u>{{proc1.responsible}}</u>
+      </div>
+      <div class="col-md-6">
+        FMEA Date (Orig.): <u>{{proc1.date }}	</u>	
+      </div>
+    </div>
+  </div>
+      <div class="row mt-3">
+        
+          <a href="{% url 'fmeaprocess' %}"><button class="btn btn-warning text-right">Add New</button></a>
+        
       </div>
       <div class="card  m-5 p-3" >
           <div class="table-responsive">
@@ -27,7 +45,16 @@
                        <th>Action Recommended</th> 
                        <th>Resp.</th>
                        <th>Actions Taken</th>
+                       <th>Tracker</th>
+                       <th>Risk Level</th>
+                       <th>Status</th>
+                       <th>Severity</th>
+                       <th>Occurence</th>
+                       <th>Detection</th>
+                       <th>Final RPN</th>
                        <th>Edit</th>
+                       <th>view</th>
+
                       </tr>
                     </thead>
                     <tbody>
@@ -47,7 +74,23 @@
                               <td>{{data.actionRecommended}}</td>
                               <td>{{data.responsiblePerson}}</td>
                               <td>{{data.actionTaken}}</td>
+                              <td>{{data.reference}}</td>
+                              <td>{% if data.riskLevel <= 20 %}
+                                   Low
+                                   {% elif data.riskLevel > 20 and data.riskLevel <= 60 %}
+                                   Medium
+                                   {% elif data.riskLevel <= 60  %}
+                                   High
+                                   {% endif %} 
+
+                              </td>
+                              <td>{{data.status}}</td>
+                              <td>{{data.finalSeverity}}</td>
+                              <td>{{data.finalOccurence}}</td>
+                              <td>{{data.finalDetection}}</td>
+                              <td>{{data.finalRPN}}</td>
                               <td><a class="btn" style="background-color:#52ab98;" href="/fmea/update/{{ data.id }}">Edit</a></td>
+                              <td><a class="btn" style="background-color:#52ab98;" href="/fmea/show/{{ data.id }}">View</a></td>
                             
                           </tr>
 

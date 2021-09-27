@@ -11,6 +11,9 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request,'index.html', )
 
+def scale(request):
+    return render(request,'scale.html', )
+
 # def register(request):
 #     form=CreateUserForm()
 #     if request.method=="POST":
@@ -57,13 +60,15 @@ def fmeaProcess(request):
 def view_process(request):
     context={}
     context["dataset"]=FmeaProcess.objects.all()
+    context["proc1"]=FmeaRegister.objects.get(id=1)
     return render(request,"view_process.html",context)
 
+@login_required
 def edit_process(request, id):
     fmea=FmeaProcess.objects.get(id=id)
-    return render(request,'edit.html',{'fmea':fmea})
+    return render(request,'show.html',{'fmea':fmea})
 
-
+@login_required
 def update_process(request,id):
     context ={}
     obj = get_object_or_404(FmeaProcess, id = id)
