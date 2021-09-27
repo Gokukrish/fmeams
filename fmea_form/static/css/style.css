@@ -11,6 +11,11 @@ a, a:hover, a:focus, a:active {
     text-decoration: none;
     color:white !important;
 }
+
+body{
+    overflow-x:hidden;
+}
+
 .contact{
     padding: 4%;
     height: 400px;
