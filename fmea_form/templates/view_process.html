@@ -5,7 +5,7 @@
 {% block content %}
   <div class="container-fluid bgcolor">
   <div class="container mt-3 ">
-    <div class="row ">
+    <div class="row fw-bold">
       <div class="col-md-6">
         Process/Product Name:<u>{{proc1.process}}</u>
       </div>
@@ -13,7 +13,7 @@
         Prepared By: <u>{{proc1.preparedBy}}	</u>	
       </div>
     </div>
-    <div class="row ">
+    <div class="row fw-bold">
       <div class="col-md-6">
         Responsible: <u>{{proc1.responsible}}</u>
       </div>
@@ -24,7 +24,7 @@
   </div>
       <div class="row mt-3">
         
-          <a href="{% url 'fmeaprocess' %}"><button class="btn btn-warning text-right">Add New</button></a>
+          <a href="{% url 'fmeaprocess' %}" class="float-right"><button class="btn btn-warning ">Add New</button></a>
         
       </div>
       <div class="card  m-5 p-3" >
@@ -84,7 +84,13 @@
                                    {% endif %} 
 
                               </td>
-                              <td>{{data.status}}</td>
+                              <td>{% if data.status == True %}
+                                  Completed
+                                  {% else %}
+                                  Incomplete
+                                  {% endif %}
+
+                              </td>
                               <td>{{data.finalSeverity}}</td>
                               <td>{{data.finalOccurence}}</td>
                               <td>{{data.finalDetection}}</td>

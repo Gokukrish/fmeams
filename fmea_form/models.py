@@ -13,7 +13,7 @@ occurance_choices=(
     (1,"Once every 1 - 3 years"), 
 )
 
-severity_choices= [(i,i) for i in range(11)]
+severity_choices= [(i,i) for i in range(1,11)]
 
 
 status=(
