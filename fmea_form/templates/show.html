@@ -6,30 +6,171 @@
   <div class="container bgcolor">
    
       <div class="card  m-5 p-3" >
-          
-          <div class="row mb-2">
-            <div class="col-md-3 col-lg-3 font-weight-bold">
-                Type
-            </div>
-            <div class="col-md-9 col-lg-9 ">
-                {{fmea.processType}}
-            </div>
+        <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Type
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.processType}}
+          </div>
           </div>
           <div class="row mb-2">
-            <div class="col-md-3 col-lg-3 font-weight-bold">
-                Process Step/Input
-            </div>
-            <div class="col-md-9 col-lg-9">
-                {{fmea.processStep}}
-            </div>
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Process Step/Input
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.processStep}}
+          </div>
           </div>
           <div class="row mb-2">
-            <div class="col-md-3 col-lg-3 font-weight-bold">
-              Potential Failure Mode
-            </div>
-            <div class="col-md-9 col-lg-9">
-                {{fmea.potentialFaliureMode}}
-            </div>
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Potential Failure Mode
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.potentialFaliureMode}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Potential Failure Effects
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.potentialFailureEffect}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Severity
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.severity}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          PotentialCauses
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.potentialCause}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Occurence
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.occurence}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          CurrentControls
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.currentControls}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Detection
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.detection}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          RPN
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.rpn}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Action Recommended
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.actionRecommended}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Responsible
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.responsiblePerson}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          ActionsTaken
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.actionTaken}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Tracker
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.reference}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          RiskLevel
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {% if fmea.riskLevel <= 20 %}
+            Low
+            {% elif fmea.riskLevel > 20 and fmea.riskLevel <= 60 %}
+            Medium
+            {% elif fmea.riskLevel <= 60  %}
+            High
+            {% endif %} 
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Status
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.status}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Severity
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.finalSeverity}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Occurence
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.finalOccurence}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Detection
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.finalDetection}}
+          </div>
+          </div>
+          <div class="row mb-2">
+          <div class="col-md-3 col-lg-3 fw-bold">
+          Final RPN
+          </div>
+          <div class="col-md-9 col-lg-9">
+            {{fmea.finalRPN}}
+          </div>
           </div>
       </div>
   </div>
