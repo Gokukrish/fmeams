@@ -13,6 +13,9 @@ occurance_choices=(
     (1,"Once every 1 - 3 years"), 
 )
 
+severity_choices= [(i,i) for i in range(11)]
+
+
 status=(
     (1,"Completed"),
     (0,"Incomplete")
@@ -36,11 +39,11 @@ class FmeaProcess(models.Model):
     processStep= models.CharField(max_length=1024)
     potentialFaliureMode= models.CharField(max_length=1024)
     potentialFailureEffect= models.CharField(max_length=1024)
-    severity = models.IntegerField(default=0)
+    severity = models.IntegerField(choices=severity_choices,default=0)
     potentialCause= models.CharField(max_length=1024)
     occurence = models.IntegerField(choices=occurance_choices,default=0)
     currentControls= models.CharField(max_length=1024)
-    detection = models.IntegerField(default=0)
+    detection = models.IntegerField(choices=severity_choices,default=0)
     #rpn = models.IntegerField(default=0)
     actionRecommended= models.CharField(max_length=1024)
     responsiblePerson= models.CharField(max_length=200)

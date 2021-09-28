@@ -8,19 +8,27 @@
       <div class="card  m-5 p-3" >
           
           <div class="row mb-2">
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-3 col-lg-3 font-weight-bold">
                 Type
             </div>
-            <div class="col-md-9 col-lg-9">
+            <div class="col-md-9 col-lg-9 ">
                 {{fmea.processType}}
             </div>
           </div>
           <div class="row mb-2">
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-3 col-lg-3 font-weight-bold">
                 Process Step/Input
             </div>
             <div class="col-md-9 col-lg-9">
                 {{fmea.processStep}}
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-md-3 col-lg-3 font-weight-bold">
+              Potential Failure Mode
+            </div>
+            <div class="col-md-9 col-lg-9">
+                {{fmea.potentialFaliureMode}}
             </div>
           </div>
       </div>

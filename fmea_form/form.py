@@ -57,9 +57,8 @@ class FmeaForm2(forms.ModelForm):
                 'class': "form-control mb-2",
                 'placeholder': 'Potential Failure Effect'
                 }),
-            'severity':TextInput(attrs={
+            'severity':forms.Select(attrs={
                 'class': "form-control mb-2",
-                'placeholder': 'Severity'
                 }), 
             'potentialCause':TextInput(attrs={
                 'class': "form-control mb-2",
@@ -72,9 +71,8 @@ class FmeaForm2(forms.ModelForm):
                 'class': "form-control mb-2",
                 'placeholder': 'Current Controls'
                 }), 
-            'detection':TextInput(attrs={
+            'detection':forms.Select(attrs={
                 'class': "form-control mb-2",
-                'placeholder': 'Detection'
                 }), 
             'actionRecommended':TextInput(attrs={
                 'class': "form-control mb-2",

@@ -4,7 +4,7 @@
 {# load crispy_forms_tags #}
 {% block content %}
   <div class="container-fluid bgcolor">
-  <div class="container mt-3">
+  <div class="container mt-3 ">
     <div class="row ">
       <div class="col-md-6">
         Process/Product Name:<u>{{proc1.process}}</u>
@@ -29,28 +29,28 @@
       </div>
       <div class="card  m-5 p-3" >
           <div class="table-responsive">
-              <table class="table table-striped mt-3" id="table_id" >
+              <table class="table table-striped mt-3 " id="table_id" >
                   <thead class="thead-dark">
-                    <tr>
+                    <tr class="head-color">
                        <th>Type</th>
                        <th>Process Step/Input</th>
-                       <th>Potential Failure Mode</th>
-                       <th>Potential Failure Effects</th>
-                       <th class="row-color">Severity (1 - 10)</th>
-                       <th>Potential Causes</th>
-                       <th class="row-color">Occurence (1 - 10)</th>
-                       <th>Current Controls</th>
-                       <th class="row-color">Detection (1 - 10)</th>
+                       <th>PotentialFailureMode</th>
+                       <th>PotentialFailureEffects</th>
+                       <th class="row-color"><div>Severity</div> </th>
+                       <th>PotentialCauses</th>
+                       <th class="row-color">Occurence</th>
+                       <th>CurrentControls</th>
+                       <th class="row-color">Detection</th>
                        <th>RPN</th>
-                       <th>Action Recommended</th> 
-                       <th>Resp.</th>
-                       <th>Actions Taken</th>
+                       <th>ActionRecommended</th> 
+                       <th>Responsible</th>
+                       <th>ActionsTaken</th>
                        <th>Tracker</th>
-                       <th>Risk Level</th>
+                       <th>RiskLevel</th>
                        <th>Status</th>
-                       <th>Severity</th>
-                       <th>Occurence</th>
-                       <th>Detection</th>
+                       <th class="row-color">Severity</th>
+                       <th class="row-color">Occurence</th>
+                       <th class="row-color">Detection</th>
                        <th>Final RPN</th>
                        <th>Edit</th>
                        <th>view</th>
@@ -65,11 +65,11 @@
                               <td>{{data.processStep}}</td>
                               <td>{{data.potentialFaliureMode}}</td>
                               <td>{{data.potentialFailureEffect}}</td>
-                              <td class="row-color">{{data.severity}}</td>
+                              <td>{{data.severity}}</td>
                               <td>{{data.potentialCause}}</td>
-                              <td class="row-color">{{data.occurence}}</td>
+                              <td>{{data.occurence}}</td>
                               <td>{{data.currentControls}}</td>
-                              <td class="row-color">{{data.detection}}</td>
+                              <td>{{data.detection}}</td>
                               <td>{{data.rpn}}</td>
                               <td>{{data.actionRecommended}}</td>
                               <td>{{data.responsiblePerson}}</td>

@@ -55,6 +55,19 @@ body{
 }
 
 .row-color{
-    background-color: rgba(255, 89, 0, 0.611)!important; 
+    background-color: rgb(12, 100, 12)!important; 
     
+}
+
+.rotate > div {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.head-color th {
+    background-color: rgb(12, 163, 80);
+   
 }
